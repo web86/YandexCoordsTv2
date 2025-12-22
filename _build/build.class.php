@@ -38,12 +38,14 @@ class siteBuilder {
 
     public function prepareBuilder() {
         /* define paths */
-        $this->config['PACKAGE_ROOT'] = dirname(dirname(__FILE__)) . '/';
-        if (file_exists(dirname(dirname(dirname(__FILE__))) . '/core')) {
-        	$this->config['MODX_BASE_PATH'] = dirname($this->config['PACKAGE_ROOT']) . '/';
-        } else {
-        	$this->config['MODX_BASE_PATH'] = dirname(dirname($this->config['PACKAGE_ROOT'])) . '/';
-        }
+        // $this->config['PACKAGE_ROOT'] = dirname(dirname(__FILE__)) . '/';
+        // if (file_exists(dirname(dirname(dirname(__FILE__))) . '/core')) {
+        // 	$this->config['MODX_BASE_PATH'] = dirname($this->config['PACKAGE_ROOT']) . '/';
+        // } else {
+        // 	$this->config['MODX_BASE_PATH'] = dirname(dirname($this->config['PACKAGE_ROOT'])) . '/';
+        // }
+        $this->config['PACKAGE_ROOT'] = dirname(__DIR__) . '/';
+        $this->config['MODX_BASE_PATH'] = $this->config['PACKAGE_ROOT'];
 
         $this->renameDirs();
 

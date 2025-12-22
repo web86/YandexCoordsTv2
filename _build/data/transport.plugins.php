@@ -5,7 +5,7 @@
 $plugins = array();
 
 $tmp = array(
-    'YandexCoordsTv' => array(
+    'YandexCoordsTv2' => array(
         'file' => 'myyandexcoordstv',
         'description' => '',
         'events' => array(

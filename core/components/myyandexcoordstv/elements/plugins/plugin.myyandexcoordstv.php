@@ -1,6 +1,9 @@
 <?php
-$corePath = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/myyandexcoordstv/';
-$assetsUrl = $modx->getOption('assets_url', null, MODX_CORE_PATH).'components/myyandexcoordstv/';
+// $corePath = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/myyandexcoordstv/';
+// $assetsUrl = $modx->getOption('assets_url', null, MODX_CORE_PATH).'components/myyandexcoordstv/';
+$corePath  = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/myyandexcoordstv/';
+$assetsUrl = $modx->getOption('assets_url', null, MODX_ASSETS_URL) . 'components/myyandexcoordstv/';
+
 $yandexCoordsTvApiKey = $modx->getOption('yandex_coords_tv_api_key2');
 $yandexCoordsTvApiSuggestKey = $modx->getOption('yandex_coords_tv_api_suggest_key');
 
@@ -20,38 +23,18 @@ switch ($modx->event->name) {
     case 'OnManagerPageBeforeRender':
         break;
     case 'OnDocFormRender':
-
         $modx->regClientCSS($assetsUrl . 'css/mgr/default.css');
-
-        // $jqueryScript = '<script type="text/javascript">';
-        // $jqueryScript .= "\n";
-        // $jqueryScript .= 'if(typeof jQuery == "undefined"){';
-        // $jqueryScript .= "\n";
-        // $jqueryScript .= 'document.write(\'<script type="text/javascript" src="//yandex.st/jquery/2.1.1/jquery.min.js" ></\'+\'script>\');';
-        // $jqueryScript .= "\n";
-        // $jqueryScript .= '}';
-        // $jqueryScript .= "\n";
-        // $jqueryScript .= '</script>';
-        // $jqueryScript .= "\n";
-
-        // $modx->regClientStartupScript($jqueryScript, true);
-
-
-        $ymapsScript = '<script type="text/javascript">';
-        $ymapsScript .= "\n";
-        $ymapsScript .= 'if(typeof ymaps == "undefined"){';
-        $ymapsScript .= "\n";
-        if($yandexCoordsTvApiKey){
-            $ymapsScript .= 'document.write(\'<script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU&apikey='.$yandexCoordsTvApiKey.'&suggest_apikey='.$yandexCoordsTvApiSuggestKey.'></\'+\'script>\');';
-        }else{
-            $ymapsScript .= 'document.write(\'<script type="text/javascript" src="//api-maps.yandex.ru/2.1/?lang=ru_RU" ></\'+\'script>\');';
+    
+        $ymapsUrl = '//api-maps.yandex.ru/2.1/?lang=ru_RU';
+        if (!empty($yandexCoordsTvApiKey)) {
+            $ymapsUrl .= '&apikey=' . urlencode($yandexCoordsTvApiKey);
+            if (!empty($yandexCoordsTvApiSuggestKey)) {
+                $ymapsUrl .= '&suggest_apikey=' . urlencode($yandexCoordsTvApiSuggestKey);
+            }
         }
-        $ymapsScript .= "\n";
-        $ymapsScript .= '}';
-        $ymapsScript .= "\n";
-        $ymapsScript .= '</script>';
-        $ymapsScript .= "\n";
-
-        $modx->regClientStartupScript($ymapsScript, true);
+    
+        // важно: именно URL, без document.write
+        $modx->regClientScript($ymapsUrl, true);
         break;
+
 }

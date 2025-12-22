@@ -6,7 +6,7 @@ $plugins = array();
 
 $tmp = array(
     'YandexCoordsTv' => array(
-        'file' => 'yandexcoordstv',
+        'file' => 'myyandexcoordstv',
         'description' => '',
         'events' => array(
             'OnDocFormRender' => array(),

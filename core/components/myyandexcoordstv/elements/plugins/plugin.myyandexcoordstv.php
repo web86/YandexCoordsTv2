@@ -1,7 +1,7 @@
 <?php
-$corePath = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/yandexcoordstv/';
-$assetsUrl = $modx->getOption('assets_url', null, MODX_CORE_PATH).'components/yandexcoordstv/';
-$yandexCoordsTvApiKey = $modx->getOption('yandex_coords_tv_api_key');
+$corePath = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/myyandexcoordstv/';
+$assetsUrl = $modx->getOption('assets_url', null, MODX_CORE_PATH).'components/myyandexcoordstv/';
+$yandexCoordsTvApiKey = $modx->getOption('yandex_coords_tv_api_key2');
 $yandexCoordsTvApiSuggestKey = $modx->getOption('yandex_coords_tv_api_suggest_key');
 
 switch ($modx->event->name) {

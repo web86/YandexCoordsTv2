@@ -9,7 +9,9 @@ $intro = 'Для корректной работы пакета, требует�
         <a href="https://developer.tech.yandex.ru/" target="_blank">личном кабинета разработчика яндекс</a>.';
 
 $apiKey = 'API ключ яндекса';
+$suggestKey = 'Ключ яндекс Suggest API';
 $apiKey_intro = 'Введите API ключ яндекса';
+$suggestKey_intro = 'Введите Suggest API ключ яндекса';
 $output =
     '<style>
     #setup_form_wrapper {font: normal 12px Arial;line-height:18px;}
@@ -17,6 +19,7 @@ $output =
     #setup_form_wrapper label {width: 125px; text-align: right;}
     #setup_form_wrapper input {height: 25px; border: 1px solid #AAA; border-radius: 3px; padding: 3px;}
     #setup_form_wrapper input#apikey {height: 25px; width: 200px;}
+    #setup_form_wrapper input#suggestkey {height: 25px; width: 200px;}
     #setup_form_wrapper table {margin-top:10px;}
     #setup_form_wrapper small {font-size: 10px; color:#555; font-style:italic;}
 </style>
@@ -28,6 +31,11 @@ $output =
             <td><input type="text" name="apikey" value="" placeholder="aaa11a11-111a-1111-1111-11111a111111" id="apikey" /></td>
         </tr>
         <tr><td colspan="2"><small>'.$apiKey_intro.'</small></td></tr>
+        <tr>
+            <td><label for="suggestkey">'.$suggestKey.':</label></td>
+            <td><input type="text" name="suggestkey" value="" placeholder="aaa11a11-111a-1111-1111-11111a111111" id="suggestkey" /></td>
+        </tr>
+        <tr><td colspan="2"><small>'.$suggestKey_intro.'</small></td></tr>
     </table>
 </div>
 ';

@@ -4,7 +4,7 @@
 class siteBuilder {
 
     public $config = array(
-            'PACKAGE_NAME' => 'yandexcoordstv',
+            'PACKAGE_NAME' => 'myyandexcoordstv',
             'PACKAGE_VERSION' => '1.0.2',
             'PACKAGE_RELEASE' => 'beta',
             'BUILD_RESOLVERS' => array()

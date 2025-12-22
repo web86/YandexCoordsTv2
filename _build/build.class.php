@@ -47,7 +47,7 @@ class siteBuilder {
         $this->config['PACKAGE_ROOT'] = dirname(__DIR__) . '/';
         $this->config['MODX_BASE_PATH'] = $this->config['PACKAGE_ROOT'];
 
-        $this->renameDirs();
+        //$this->renameDirs();
 
         /* modx connection */
         define('MODX_API_MODE', true);
@@ -108,9 +108,9 @@ class siteBuilder {
         $this->category_attr[xPDOTransport::RELATED_OBJECTS] = true;
 
         $this->addPlugins($category);
-        $this->addSnippets($category);
-        $this->addTemplates($category);
-        $this->addChunks($category);
+        //$this->addSnippets($category);
+        //$this->addTemplates($category);
+        //$this->addChunks($category);
 
         $builder->setPackageAttributes(array(
             'site_category' => $this->config['PACKAGE_NAME'],

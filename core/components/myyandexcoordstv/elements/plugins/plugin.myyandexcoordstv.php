@@ -1,6 +1,4 @@
 <?php
-// $corePath = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/myyandexcoordstv/';
-// $assetsUrl = $modx->getOption('assets_url', null, MODX_CORE_PATH).'components/myyandexcoordstv/';
 $corePath  = $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/myyandexcoordstv/';
 $assetsUrl = $modx->getOption('assets_url', null, MODX_ASSETS_URL) . 'components/myyandexcoordstv/';
 
@@ -23,9 +21,11 @@ switch ($modx->event->name) {
     case 'OnManagerPageBeforeRender':
         break;
     case 'OnDocFormRender':
+
         $modx->regClientCSS($assetsUrl . 'css/mgr/default.css');
     
-        $ymapsUrl = '//api-maps.yandex.ru/2.1/?lang=ru_RU';
+        $ymapsUrl = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+    
         if (!empty($yandexCoordsTvApiKey)) {
             $ymapsUrl .= '&apikey=' . urlencode($yandexCoordsTvApiKey);
             if (!empty($yandexCoordsTvApiSuggestKey)) {
@@ -33,8 +33,11 @@ switch ($modx->event->name) {
             }
         }
     
-        // важно: именно URL, без document.write
-        $modx->regClientScript($ymapsUrl, true);
+        
+        $modx->controller->addJavascript($ymapsUrl);
+        
+        
+    
         break;
 
 }

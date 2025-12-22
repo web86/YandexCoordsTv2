@@ -5,7 +5,7 @@
 
 $output = null;
 
-$intro = 'Для корректной работы пакета, требуется получить <strong>Javascript API</strong>, его можно получить в 
+$intro = 'Для корректной работы пакета, требуется получить <strong>Javascript API</strong> а также <strong>API Геосаджеста</strong>, их можно получить в 
         <a href="https://developer.tech.yandex.ru/" target="_blank">личном кабинета разработчика яндекс</a>.';
 
 $apiKey = 'API ключ яндекса';

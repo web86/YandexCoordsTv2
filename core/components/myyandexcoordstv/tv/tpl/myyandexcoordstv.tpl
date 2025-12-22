@@ -113,7 +113,9 @@
                         iconCaption: firstGeoObject.properties.get('name'),
                         balloonContent: firstGeoObject.properties.get('text')
                     });
-                $('#tv{$tv->id}').val(coords);
+                //$('#tv{$tv->id}').val(coords);
+                document.getElementById('tv{$tv->id}').value = coords.join(',');
+
             });
         }
     }

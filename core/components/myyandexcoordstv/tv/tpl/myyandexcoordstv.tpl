@@ -18,7 +18,14 @@
     /* API YANDEX*/
     //
     // Дождёмся загрузки API и готовности DOM.
-    ymaps.ready(init);
+    //ymaps.ready(init);
+    (function waitForYmaps() {
+        if (typeof ymaps !== 'undefined') {
+            ymaps.ready(init);
+        } else {
+            setTimeout(waitForYmaps, 50);
+        }
+    })();
 
     function init() {
         var center{$tv->id} = [{$tv->get('value')|escape}];

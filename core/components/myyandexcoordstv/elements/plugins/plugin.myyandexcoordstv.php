@@ -23,18 +23,18 @@ switch ($modx->event->name) {
 
         $modx->regClientCSS($assetsUrl . 'css/mgr/default.css');
 
-        $jqueryScript = '<script type="text/javascript">';
-        $jqueryScript .= "\n";
-        $jqueryScript .= 'if(typeof jQuery == "undefined"){';
-        $jqueryScript .= "\n";
-        $jqueryScript .= 'document.write(\'<script type="text/javascript" src="//yandex.st/jquery/2.1.1/jquery.min.js" ></\'+\'script>\');';
-        $jqueryScript .= "\n";
-        $jqueryScript .= '}';
-        $jqueryScript .= "\n";
-        $jqueryScript .= '</script>';
-        $jqueryScript .= "\n";
+        // $jqueryScript = '<script type="text/javascript">';
+        // $jqueryScript .= "\n";
+        // $jqueryScript .= 'if(typeof jQuery == "undefined"){';
+        // $jqueryScript .= "\n";
+        // $jqueryScript .= 'document.write(\'<script type="text/javascript" src="//yandex.st/jquery/2.1.1/jquery.min.js" ></\'+\'script>\');';
+        // $jqueryScript .= "\n";
+        // $jqueryScript .= '}';
+        // $jqueryScript .= "\n";
+        // $jqueryScript .= '</script>';
+        // $jqueryScript .= "\n";
 
-        $modx->regClientStartupScript($jqueryScript, true);
+        // $modx->regClientStartupScript($jqueryScript, true);
 
 
         $ymapsScript = '<script type="text/javascript">';

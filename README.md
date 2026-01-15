@@ -2,7 +2,7 @@
 ЭТО ФОРК YandexCoordsTv, НО ПЕРЕДЕЛАННЫЙ:
 
 - выпилил зависимость jquery
-- добавил настройку Yandex Suggestion API обязательную по новым правилам
+- добавил настройку Yandex Suggestion API обязательную по новым правилам (https://developer.tech.yandex.ru/)
 - небольшие фиксы
 
 Совместимо с MODX 2/3
